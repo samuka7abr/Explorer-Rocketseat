@@ -38,8 +38,8 @@ class UsersController {
     if(userWithUpdatedEmail && userWithUpdatedEmail.id !== user.id){
       throw new AppError("Este Email já está em uso");
     }
-    user.name = name;
-    user.email = email;
+    user.name = name ?? user.name;
+    user.email = email ?? user.email;
 
     if(password && !old_password){
       throw new AppError('vc precisa informar a senha antiga')
