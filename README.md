@@ -1,19 +1,19 @@
-# Notes Manager API
+# 🎥 MovieNotes API
 
 ---
 
 ## 📄 Descrição
-A **Notes Manager API** é uma aplicação back-end desenvolvida para gerenciar usuários, notas, links relacionados e tags. Ela fornece endpoints para criação, leitura, atualização e exclusão de dados de forma eficiente e segura.
+A MovieNotes API é uma aplicação back-end desenvolvida para gerenciar notas e avaliações de filmes. Nela, os usuários podem criar, visualizar, organizar e excluir suas avaliações, associando cada nota a tags personalizadas. A aplicação foi construída com foco na organização e praticidade, permitindo filtrar filmes por título e tags, além de manter um histórico seguro com autenticação e validações.
 
 ---
 
 ## 🚀 Recursos
 - **Gerenciamento de Usuários**:
   - Criar, listar, atualizar e excluir usuários.
-- **Gerenciamento de Notas**:
-  - Criar, listar, visualizar e excluir notas.
+- **Gerenciamento de Avaliações de Filme**:
+  - Criar, listar, avaliar e excluir filmes .
 - **Gerenciamento de Tags e Links**:
-  - Associar tags e links às notas, com consultas personalizadas.
+  - Associar tags e links aos filmes, com consultas personalizadas.
 - **Validações**:
   - Validações robustas para evitar dados inconsistentes.
 - **Banco de Dados Relacional**:
@@ -36,7 +36,7 @@ A **Notes Manager API** é uma aplicação back-end desenvolvida para gerenciar 
 
 ### 1. Clonar o Repositório
 ```bash
-[git clone https://github.com/seu-usuario/rocketnotes-api.git](https://github.com/samuka7abr/NotesManager-API.git)
+git clone (https://github.com/samuka7abr/NotesManager-API.git)
 ```
 ### 2. Executar as Migrations
 ```bash
