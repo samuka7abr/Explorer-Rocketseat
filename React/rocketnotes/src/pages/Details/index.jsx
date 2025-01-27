@@ -5,11 +5,13 @@ import { Button } from '../../components/Button';
 import { Section } from "../../components/Section";
 import { Links } from "../../components/Section/styles";
 import { Tag } from "../../components/Tag";
+import { ButtonText } from "../../components/ButtonText";
 
 export function Details(){
   return(
     <Container>
       <Header />
+      <ButtonText title="excluir nota"/>
 
       <Section title= "Links úteis">
 
