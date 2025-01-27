@@ -1,4 +1,4 @@
-import { Container, Links} from "./styles";
+import { Container, Links, Content } from "./styles";
 
 import { Header } from '../../components/Header';
 import { Button } from '../../components/Button';
@@ -16,7 +16,10 @@ export function Details(){
        
 
       <ButtonText title="excluir nota"/>
-
+      <h1>
+        Introdução ao React
+      </h1>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis, consequatur praesentium vero, enim aliquam velit rem laboriosam modi dolores doloremque corporis eligendi pariatur quia accusamus dolore illo earum quaerat voluptate.</p>
       <Section title= "Links úteis">
 
         <Links>
