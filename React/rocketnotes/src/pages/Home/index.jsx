@@ -1,38 +1,48 @@
-import { Container, Brand, Menu, Search, Content, NewNote } from './styles';
-import { Header } from '../../components/Header';
-import { ButtonText} from '../../components/ButtonText';
-import { FiPlus } from 'react-icons/fi';
-import { Input } from '../../components/Input';
-import { FiSearch } from 'react-icons/fi';
-export function Home(){
-    return(
-        <Container>
-            <Brand>
-                <h1>RocketNotes</h1>
-            </Brand>
+import { FiPlus } from 'react-icons/fi'
+import { Container, Brand, Menu, Search, Content, NewNote } from './styles'
 
-            <Header />
+import { Note } from '../../components/Note'
+import { Input } from '../../components/Input'
+import { Header } from '../../components/Header'
+import { Section } from '../../components/Section'
+import { ButtonText } from '../../components/ButtonText'
 
-            <Menu>
-            <li><ButtonText title="Todos" $isactive/></li>
-            <li><ButtonText title="NodeJs"/></li>
-            <li><ButtonText title="ReactJs"/></li>
-                
-            </Menu>
+export function Home() {
+  return (
+    <Container>
+      <Brand>
+        <h1>Rocketnotes</h1>
+      </Brand>
 
-            <Search>
-                <Input placeholder="Pesquise pelo título" icon={ FiSearch }/>
-            </Search>
+      <Header />
 
-            <Content>
+      <Menu>
+        <li><ButtonText title="Todos" $isactive /></li>
+        <li><ButtonText title="React" /></li>
+        <li><ButtonText title="Nodejs" /></li>
+      </Menu>
 
-            </Content>
+      <Search>
+        <Input placeholder="Pesquisar pelo título" />
+      </Search>
 
-            <NewNote>
-                <FiPlus />
-                    Criar Nota
-            </NewNote>
+      <Content>
+        <Section title="Minhas notas">
+          <Note data={{
+            title: 'React',
+            tags: [
+              { id: '1', name: 'react' },
+              { id: '2', name: 'rocketseat' }
+            ]
+          }}
+          />
+        </Section>
+      </Content>
 
-        </Container>
-    )
+      <NewNote>
+        <FiPlus />
+        Criar nota
+      </NewNote>
+    </Container>
+  )
 }
