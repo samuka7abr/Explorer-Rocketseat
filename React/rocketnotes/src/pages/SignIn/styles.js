@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import BackgroundImg from '../../assets/CafeComDeusPai.svg'
 
 export const Container = styled.div`
   height: 100vh;
@@ -34,7 +35,13 @@ export const Form = styled.form`
   }
 
   > a {
-    margin-top: 124px;
+    margin-top: 100px;
     color: ${({ theme }) => theme.COLORS.ORANGE};
   }
 `
+
+export const Background = styled.div`
+    flex: 1;
+    background: url(${BackgroundImg}) no-repeat center center;
+    background-size: cover;
+`;
