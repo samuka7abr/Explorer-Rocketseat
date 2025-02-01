@@ -1,11 +1,11 @@
 import { Container, Profile, Logout } from './styles'
 import { RiShutDownLine} from 'react-icons/ri'
-import { FiMic } from 'react-icons/fi'
+import { Link } from 'react-router-dom'
 
 export function Header() {
   return (
     <Container>
-        <Profile> 
+        <Profile to="/Profile"> 
             <img src= "https://github.com/samuka7abr.png" alt='Foto do usuário'/>
 
             <div>
