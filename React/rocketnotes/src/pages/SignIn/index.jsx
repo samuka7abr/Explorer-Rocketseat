@@ -1,6 +1,8 @@
 import { FiMail, FiLock } from 'react-icons/fi'
 import { Background } from './styles'
 
+import { Link } from 'react-router-dom';
+
 import { Input } from '../../components/Input'
 import { Button } from '../../components/Button'
 
