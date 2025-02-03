@@ -1,5 +1,6 @@
 import { FiPlus } from 'react-icons/fi'
 import { Container, Brand, Menu, Search, Content, NewNote } from './styles'
+import { Link } from 'react-router-dom'
 
 import { Note } from '../../components/Note'
 import { Input } from '../../components/Input'
@@ -28,7 +29,7 @@ export function Home() {
 
       <Content>
         <Section title="Minhas notas">
-          <Note data={{
+          <Note to={"/Details/${5}"} data={{
             title: 'React',
             tags: [
               { id: '1', name: 'react' },

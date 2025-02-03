@@ -36,7 +36,7 @@ export function Details(){
       </Section>
 
 
-    <Button title="voltar"/>
+    <Button to={"/"}title="voltar"/>
       </Content>
     </main>
     </Container>
