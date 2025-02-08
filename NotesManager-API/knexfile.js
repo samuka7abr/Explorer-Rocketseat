@@ -1,4 +1,3 @@
-const { connect } = require('http2') //base 
 const path = require('path')
 
 module.exports = {
