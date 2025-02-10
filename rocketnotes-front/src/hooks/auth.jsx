@@ -1,5 +1,6 @@
-import { createContext, useContext, useState } from 'react';
 import { api } from '../../../NotesManager-API/src/services/api';
+import { createContext, useContext, useState } from 'react';
+
 const AuthContext = createContext({});
 
 function AuthProvider( { children }){
