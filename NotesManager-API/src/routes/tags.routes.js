@@ -8,7 +8,7 @@ const tagsRoutes = Router()
 
 const tagsController = new TagsController()
 
-tagsRoutes.get('/', ensureAuthenticated, tagsController.index)
+tagsRoutes.get('/', ensureAuthenticated, tagsController.index);
 
 
 
