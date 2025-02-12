@@ -3,7 +3,7 @@ import { Container } from './styles'
 export function Button({ title, loading = false, ...rest }) {
   return (
     <Container
-      type="button"
+      as="button"
       disabled={loading}
       {...rest}
     >
