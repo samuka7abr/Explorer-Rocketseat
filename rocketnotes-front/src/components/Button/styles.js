@@ -1,7 +1,6 @@
-import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import styled from "styled-components";
 
-export const Container = styled(Link)`
+export const Container = styled.button`
   width: 100%;
   background-color: ${({ theme }) => theme.COLORS.ORANGE};
   color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
@@ -18,8 +17,7 @@ export const Container = styled(Link)`
   justify-content: center;
 
   text-decoration: none;
-
- 
+  cursor: pointer;
 
   &:disabled {
     opacity: 0.5;
