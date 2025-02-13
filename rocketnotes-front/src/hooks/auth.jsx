@@ -78,6 +78,8 @@ function AuthProvider( { children }){
         const token = localStorage.getItem("@rocketnotes:token");
         const user = localStorage.getItem("@rocketnotes:user");
 
+        console.log("Recuperando token do localStorage:", token); 
+
         if(token && user){
             api.defaults.headers.common['Authorization'] = `Bearer  ${token}`;
 

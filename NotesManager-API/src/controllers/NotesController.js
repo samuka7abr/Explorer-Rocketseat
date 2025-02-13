@@ -1,9 +1,14 @@
 const knex = require("../database/knex")
+const AppError = require('../utils/AppError')
 
 class NotesController {
   async create(request, response) {
     const { title, description, tags, links } = request.body
     const user_id = request.user.id;
+
+    if(!title && !description){
+      throw new AppError('A Nota não pode estar vazia!')
+    }
 
     const [note_id] = await knex("notes").insert({
       title,
