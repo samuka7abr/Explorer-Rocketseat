@@ -1,14 +1,35 @@
-import { FiPlus } from 'react-icons/fi'
-import { Container, Brand, Menu, Search, Content, NewNote } from './styles'
-import { Link } from 'react-router-dom'
+import { Container, Brand, Menu, Search, Content, NewNote } from './styles';
+import { api } from '../../../../NotesManager-API/src/services/api';
+import { ButtonText } from '../../components/ButtonText';
+import { Section } from '../../components/Section';
+import { Header } from '../../components/Header';
+import { Input } from '../../components/Input';
+import { Note } from '../../components/Note';
+import { useState, useEffect } from 'react';
+import { FiPlus } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
 
-import { Note } from '../../components/Note'
-import { Input } from '../../components/Input'
-import { Header } from '../../components/Header'
-import { Section } from '../../components/Section'
-import { ButtonText } from '../../components/ButtonText'
 
 export function Home() {
+  const [tags, setTags] = useState([]);
+
+
+  
+
+  useEffect( () => {
+    const token = localStorage.getItem("@rocketnotes:token");
+    async function fetchTags(){
+      const response = await api.get("/tags", {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
+      
+      setTags(response.data)
+    }
+    fetchTags()
+  }, [] )
+
   return (
     <Container>
       <Brand>
@@ -19,8 +40,11 @@ export function Home() {
 
       <Menu>
         <li><ButtonText title="Todos" $isactive /></li>
-        <li><ButtonText title="React" /></li>
-        <li><ButtonText title="Nodejs" /></li>
+        {
+          tags && tags.map(tag => (
+          <li key={String(tag.id)}><ButtonText title={tag.name}  /></li>
+        ))
+        }
       </Menu>
 
       <Search>
