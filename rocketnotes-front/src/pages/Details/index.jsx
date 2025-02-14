@@ -13,6 +13,21 @@ export function Details() {
   const navigate = useNavigate();
   const params = useParams();
   
+  async function handleRemove(){
+    const confirm = window.confirm("Deseja realmente remover a nota?"); 
+    const token = localStorage.getItem("@rocketnotes:token")
+    if(confirm){
+      
+      await api.delete(`/notes/${params.id}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      navigate('/')
+      
+    }
+  }
+
   useEffect(() => {
     async function fetchNote() {
       const token = localStorage.getItem("@rocketnotes:token"); 
@@ -34,7 +49,7 @@ export function Details() {
       {data && (
         <main>
           <Content>
-            <ButtonText title="excluir nota" />
+            <ButtonText title="excluir nota" onClick={handleRemove}/>
 
             <h1>{data.title}</h1>
             <p>{data.description}</p>
@@ -59,7 +74,7 @@ export function Details() {
                 {data.tags.map(tag => <Tag key={String(tag.id)} title={tag.name} />)}
             </Section>}
 
-            <Button title="voltar" onClick={() => navigate("/")} />
+            <Button title="voltar" onClick={() => navigate(-1)} />
           </Content>
         </main>
       )}
