@@ -1,13 +1,13 @@
 import { Container, Brand, Menu, Search, Content, NewNote } from './styles';
 import { api } from '../../../../NotesManager-API/src/services/api';
 import { ButtonText } from '../../components/ButtonText';
+import { useNavigate } from 'react-router-dom';
 import { Section } from '../../components/Section';
 import { Header } from '../../components/Header';
 import { Input } from '../../components/Input';
 import { Note } from '../../components/Note';
 import { useState, useEffect } from 'react';
 import { FiPlus } from 'react-icons/fi';
-import { Link } from 'react-router-dom';
 
 
 export function Home() {
@@ -15,6 +15,7 @@ export function Home() {
   const [tagsSelected, setTagsSelected] = useState("");
   const [search, setSearch] = useState([]);
   const [notes, setNotes] = useState([]);
+  const navigate = useNavigate();
 
   function handleTagSelected(tagName){
     if(tagName === "all"){
@@ -29,8 +30,15 @@ export function Home() {
       setTagsSelected(prevState => [...prevState, tagName]);
   }
     };
-    
-  
+
+    function handleDetails(id){
+      console.log("Tentando navegar para:", `/details/${id}`);
+      
+      setTimeout(() => {
+        navigate(`/details/${id}`);
+        console.log("Navegação feita!");
+      }, 1000);
+    }
 
   useEffect( () => {
     const token = localStorage.getItem("@rocketnotes:token");
@@ -95,6 +103,7 @@ export function Home() {
             <Note 
               key={String(note.id)}
               data={note}
+              onClick={() => handleDetails(note.id)}
             />))
             }
         </Section>

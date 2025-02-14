@@ -1,12 +1,15 @@
+import { ButtonText } from "../../components/ButtonText";
 import { Container, Links, Content } from "./styles";
-
+import { Section } from "../../components/Section";
 import { Header } from '../../components/Header';
 import { Button } from '../../components/Button';
-import { Section } from "../../components/Section";
+import { useNavigate } from "react-router-dom";
 import { Tag } from "../../components/Tag";
-import { ButtonText } from "../../components/ButtonText";
+
 
 export function Details(){
+  const navigate = useNavigate();
+
   return(
     <Container>
       <Header />
@@ -36,7 +39,7 @@ export function Details(){
       </Section>
 
 
-    <Button to={"/"}title="voltar"/>
+      <Button title="voltar" onClick={() => navigate("/")} />
       </Content>
     </main>
     </Container>
