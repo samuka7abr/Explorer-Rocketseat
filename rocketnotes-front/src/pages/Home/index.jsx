@@ -32,12 +32,9 @@ export function Home() {
     };
 
     function handleDetails(id){
-      console.log("Tentando navegar para:", `/details/${id}`);
-      
       setTimeout(() => {
         navigate(`/details/${id}`);
-        console.log("Navegação feita!");
-      }, 1000);
+      }, 500);
     }
 
   useEffect( () => {
